@@ -5,14 +5,17 @@ let pig_froog = [1,1]
 let pig_sheep = [1,1]
 let froog_sheep = [1,1]
 
+ctx.fillStyle = "white"
+//Свинья
 ctx.beginPath()
-ctx.arc(75,425,75,0,2*Math.PI,true)
+ctx.arc(75,425,74,0,2*Math.PI,true)
 let img = new Image()
 img.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\pig_diplomacy.png'
 img.onload = function() { 
     ctx.drawImage(img, 30, 360)
 }
 ctx.stroke()
+ctx.fill()
 
 ctx.beginPath()
 if(pig_froog[0]){
@@ -36,17 +39,19 @@ if(pig_froog[0]){
     ctx.lineTo(275,75)
 }
 ctx.stroke()
+ctx.fill()
 
 ctx.strokeStyle = "black"
-
+//Лягушка
 ctx.beginPath()
-ctx.arc(350,75,75,0,2*Math.PI,true)
+ctx.arc(350,75,74,0,2*Math.PI,true)
 let img2 = new Image()
 img2.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\frog_diplomacy.png'
 img2.onload = function() { 
     ctx.drawImage(img2, 300, 5)
 }
 ctx.stroke()
+ctx.fill()
 
 ctx.beginPath()
 if(froog_sheep[0]){
@@ -71,17 +76,19 @@ if(froog_sheep[0]){
 }
 
 ctx.stroke()
+ctx.fill()
 
 ctx.strokeStyle = "black"
-
+//Овца
 ctx.beginPath()
-ctx.arc(625,425,75,0,2*Math.PI,true)
+ctx.arc(625,425,74,0,2*Math.PI,true)
 let img3 = new Image()
 img3.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\sheep_diplomacy.png'
 img3.onload = function() { 
     ctx.drawImage(img3, 580, 364)
 }
 ctx.stroke()
+ctx.fill()
 
 ctx.beginPath()
 if(pig_sheep[0]){
@@ -103,5 +110,4 @@ if(pig_sheep[0]){
     ctx.moveTo(550,425)
     ctx.lineTo(150,425)
 }
-
 ctx.stroke()

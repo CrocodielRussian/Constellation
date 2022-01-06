@@ -1,7 +1,5 @@
 @import "main.css";
-body{
-    background-color:#E3F0EC;
-}
+
 /* #FFF9E1 */
 /* #A3D5D0 */
 .main{
@@ -53,6 +51,6 @@ header{
     align-items: center;
 }
 canvas{
-    width: 700px;
-    height: 500px;
+    width: 705px;
+    height: 505px;
 }
