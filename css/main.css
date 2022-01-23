@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Work+Sans:ital,wght@1,200&display=swap');
+
 html,body{
     height: 100%;
     background-color:#E3F0EC;
@@ -52,6 +53,9 @@ nav{
 }
 #world{
     background-image: url("../img/world.png");
+}
+#capital{
+    background-image: url("../img/castle.PNG");
 }
 #money{
     background-image: url("../img/economic.png");

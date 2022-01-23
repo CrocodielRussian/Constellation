@@ -2,6 +2,11 @@
 
 /* #FFF9E1 */
 /* #A3D5D0 */
+@font-face{
+    font-family: Jej;
+    src:
+        url("JejuGothic.ttf") format("ttf");
+}
 .main{
     display: flex;
     justify-content: center;

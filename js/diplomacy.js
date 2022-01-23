@@ -10,7 +10,7 @@ ctx.fillStyle = "white"
 ctx.beginPath()
 ctx.arc(75,425,74,0,2*Math.PI,true)
 let img = new Image()
-img.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\pig_diplomacy.png'
+img.src = 'img\\pig_diplomacy.png'
 img.onload = function() { 
     ctx.drawImage(img, 30, 360)
 }
@@ -46,7 +46,7 @@ ctx.strokeStyle = "black"
 ctx.beginPath()
 ctx.arc(350,75,74,0,2*Math.PI,true)
 let img2 = new Image()
-img2.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\frog_diplomacy.png'
+img2.src = 'img\\frog_diplomacy.png'
 img2.onload = function() { 
     ctx.drawImage(img2, 300, 5)
 }
@@ -83,7 +83,7 @@ ctx.strokeStyle = "black"
 ctx.beginPath()
 ctx.arc(625,425,74,0,2*Math.PI,true)
 let img3 = new Image()
-img3.src = 'C:\\Users\\Слоник\\Documents\\GitHub\\Constellation\\img\\sheep_diplomacy.png'
+img3.src = 'img\\sheep_diplomacy.png'
 img3.onload = function() { 
     ctx.drawImage(img3, 580, 364)
 }
