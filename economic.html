@@ -10,6 +10,7 @@
 <body>
     <div class="wrapper">
         <header>
+            <h1 class="header_title">Экономика</h1>
         </header>
         <main class="main">
             <div class="tabs">
@@ -21,8 +22,11 @@
                     </nav>
                 </div>
                 <div class="tabs__body">
-                    <div id="all_info" class="tabs__block">1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quaerat ullam.
-                         A autem fuga veritatis inventore neque dolorum repellendus quo, quasi earum sunt ab minima? Omnis quod sint consequatur cumque.</div>
+                    <div id="all_info" class="tabs__block">
+                        <div class="wrapper__canvas">
+                            <canvas id="pie_income" width="400" height="400"></canvas>
+                        </div>
+                    </div>
                     <div id="build" class="tabs__block">2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quaerat ullam.
                         A autem fuga veritatis inventore neque dolorum repellendus quo, quasi earum sunt ab minima? Omnis quod sint consequatur cumque.</div>
                     <div id="trade" class="tabs__block">3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quaerat ullam.
@@ -33,13 +37,15 @@
         <footer>
             <nav class = "main_menu__items">
                 <a href="map.html" class="main_menu__item"><div id="world" class="main_menu__icon"></div>Карта мира</a>
-                <a href="city.html" class="main_menu__item"><div id="capital" class="main_menu__icon"></div>Столица</a>
-                <a href="economic.html" class="main_menu__item"><div id="money" class="main_menu__icon"></div>Экономика</a>
+                <a href="capital.html" class="main_menu__item"><div id="capital" class="main_menu__icon"></div>Столица</a>
+                <a href="economic.html#all_info" class="main_menu__item"><div id="money" class="main_menu__icon"></div>Экономика</a>
                 <a href="diplomacy.html" class="main_menu__item"><div id="dip" class="main_menu__icon"></div>Дипломатия</a>
                 <a href="art.html" class="main_menu__item"><div id="picture" class="main_menu__icon"></div>Арты</a>
             </nav>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="js/economic.js"></script>
+
 </body>
 </html>

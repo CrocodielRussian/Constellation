@@ -29,13 +29,12 @@
     justify-content: center;
 }
 .tabs__items{
-    display: flex;
+    width: 100%;
     padding: 10px;
-    width: 1200px;
+    max-width: 1000px;
 }
 .tabs_item{
     flex: 0 1 33.3%;
-    
     display: flex;
     text-decoration: none;
     justify-content: center;
@@ -47,26 +46,39 @@
     text-transform: uppercase;
 }
 .tabs__body{
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    min-height: 32vw;
 }
 .tabs__block{
-    max-width: 75%;
+    width: 100%;
     padding: 20px;
+    margin: 0 auto;
+    height: 100%;
     line-height: 24px;
+    text-align: center;
     display: none;
     position: relative;
     
 }
+.wrapper__canvas{
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+}
+#pie_income{
+    width: 100%;
+    height: 100%;
 
-.tabs__block::before{
+
+}
+/* .tabs__block::before{
     content: "";
     width: 290px;
     height: 4px;
     top: -13px;
     background-color: black;
     position: relative;
-}
+} */
 .tabs__block:target{
     display: block;
 }
@@ -85,7 +97,7 @@
     width: 130px;
     left: 880px;
 } */
-@media(max-width: 860px) {
+@media(max-width: 915px) {
     .tabs_item span{
         width: 120px;
         font-size: 20px;
