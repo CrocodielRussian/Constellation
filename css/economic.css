@@ -62,8 +62,15 @@
 }
 .wrapper__canvas{
     display: inline-block;
-    width: 400px;
-    height: 400px;
+    min-width: 300px;
+    min-height: 300px;
+    width: 30%;
+    height: 30%;
+}
+.wrapper_canvas__content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 #pie_income{
     width: 100%;

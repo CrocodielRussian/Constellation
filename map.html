@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/map.css" type="text/css">
     <title>Карта мира</title>
 </head>
 <body>
@@ -12,7 +12,21 @@
         <header>
             <h1 class="header_title">Карта</h1>
         </header>
-        <main class="main"></main>
+        <main class="main">
+            <div class="wrapper__content">
+                <div class="map__time">
+                    <p class="time_text">Нам всем конец через:</p>
+                    <div class="time_timer"></div>
+                </div>
+                
+                <div class="map_map">
+                    <canvas id="circle_map" class="circle_map" width="1459" height="510" ></canvas>
+                    <div class="circle"></div>
+                    <div class="fon"></div>
+                </div>
+            </div>
+
+        </main>
         <footer>
             <nav class = "main_menu__items">
                 <a href="map.html" class="main_menu__item"><div id="world" class="main_menu__icon"></div>Карта мира</a>
