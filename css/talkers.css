@@ -1,0 +1,11 @@
+@import "main_city.css";
+
+header{
+    background-color: #705092;
+}
+.population_icon{
+    background-image: url("../img/sheep.png");
+}
+footer{
+    background-color: #705092;
+}

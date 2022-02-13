@@ -60,6 +60,7 @@
     position: relative;
     
 }
+/* Общие сведения */
 .wrapper__canvas{
     display: inline-block;
     min-width: 300px;
@@ -75,9 +76,125 @@
 #pie_income{
     width: 100%;
     height: 100%;
-
-
 }
+/* Здания */
+.buildings{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.building__info{
+    position: relative;
+    min-width: 25%;
+    display: grid;
+    grid-row: 6;
+    grid-column: 2;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px 10px;
+}
+.building__info[value*="food"]::before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 18px;
+    border-radius: 20px 20px 0 0;
+    background-color: #376B0D;
+}
+.building__info[value*="solders"]::before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 18px;
+    border-radius: 20px 20px 0 0;
+    background-color: red;
+}
+.building_title{
+    font-size: 20px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    margin: 0.2em;
+}
+.building_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.building_img > img{
+    width: 65%;
+}
+
+ul{
+    grid-row-start: 2;
+    list-style-type: none;
+    grid-column-start: 2;
+}
+li{
+    margin: 0.2em;
+    text-align: left;
+}
+.building_maintext{
+    font-weight: 500;
+}
+#stonks{
+    color: #376B0D;
+}
+/* Торговля */
+#cost_upgrade{
+    color: #D4A11D;
+}
+.trade__transfers{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.transfer{
+    width: 100%;
+    height: 140px;
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.transfer_country{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.transfer_country > * {
+    margin: 0 10px;
+}
+.transfer_icon{
+    background-color: #D4A11D;
+    min-width: 67px;
+    max-height: 85px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.trade_direction{
+    font-size: 3em;
+}
+
+
 /* .tabs__block::before{
     content: "";
     width: 290px;

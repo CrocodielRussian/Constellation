@@ -1,69 +1,11 @@
-@import "main.css";
-*{
-    color: white;
-}
+@import "main_city.css";
+
 header{
-    min-width: calc(100% - 2em);
     background-color: #A66D59;
-    min-height: calc(100px - 2em);
-    padding: 1em;
-}
-header > *{
-    font-size: 2em;
-}.header__panel{
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-}
-.panel__population{
-    min-width: 146px;
-    min-height: 38px;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row;
-    align-items: center;
 }
 .population_icon{
-    width: 50px;
-    height: 60px;
     background-image: url("../img/pig.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-.city_title{
-    font-size: 1.2em;
-    flex-grow: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.panel__money{
-    display: flex;
-    flex-grow: 1;
-    min-width: 340px;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.currency_icon{
-    width: 44px;
-    height: 38px;
-    background-image: url("../img/curency_icon.PNG");
-    background-position: center;
-}
-.panel__money_butt{
-    border: 0;
-    font-size: 1.5em;
-    background-color: transparent;
-    cursor: pointer;
 }
 footer{
-    background-color: #A66D59;  
-}
-.main_menu__icon{
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-.main_menu__item{
-    color: white;
+    background-color: #A66D59;
 }
