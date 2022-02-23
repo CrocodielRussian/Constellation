@@ -31,25 +31,34 @@ const dataPieExpenses = {
 		borderColor: colorpPieExpenses,
  	 }]
 }
-allPlugins = {
-	legend: {
-		labels: {
-			font: {
-				size: 15
+function getPlugins(subText){
+	allPlugins = {
+		legend: {
+			labels: {
+				font: {
+					size: 20,
+					family: "MoshitaMono"
+				}
+			},
+			title:{
+				display: true,
+				font: {
+					size: 40,
+					family: "MoshitaMono",
+				},
+				fullSize: true,
+				text: subText
 			}
 		}
 	}
+	return allPlugins
 }
 const configPieIncome = {
 	type: 'doughnut',
 	data: dataPieIncome,
 	options: {
 		responsive: true,
-		title: {
-		  display: true,
-		  text: "Доходы"
-		},
-		plugins: allPlugins
+		plugins: getPlugins("Доходы")
 	  }
 }
 const configPieExpenses = {
@@ -57,12 +66,8 @@ const configPieExpenses = {
 	data: dataPieExpenses,
 	options: {
 		responsive: true,
-		title: {
-		  display: true,
-		  text: "Расходы",
-		},
-		plugins: allPlugins
-	  }
+		plugins: getPlugins("Расходы")
+	}
 }
 
 ctx2 = document.getElementById("pie_expenses").getContext('2d')
@@ -79,7 +84,7 @@ class Building{
 		this.group = group
 	}
 	createEl(){
-		let buildings = document.querySelector(".buildings")
+		let buildings = document.querySelector(".wrapper__buildings")
 		let building__info = document.createElement("div")
 		building__info.setAttribute("value",this.group)
 		let building_title = document.createElement("span")
@@ -110,6 +115,7 @@ class Building{
 		buildings.append(building__info)
 	}
 }
+	
 li_data = ["Батончики","20%","10$","2/2","1000$"]
 let a = new Building("А.П Мигунов","ap_migunov",li_data,"food")
 let b = new Building("А.П Мигунов","ap_migunov",li_data,"solders")

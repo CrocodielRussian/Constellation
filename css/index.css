@@ -1,2 +1,123 @@
-@import "main.css";
+:root{
+    --size: 0;
+}
+@font-face {
+    font-family: MoshitaMono;
+    src: url("../img/MoshitaMono.ttf");
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: MoshitaMono, sans-serif;
+}
 
+body{
+    background-color: #E3F0EC;
+}
+.content{
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* flex-direction: row; */
+}
+.country_img{
+    width: 50%;
+    height: 100%;
+    background-color: #d9a0a0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.entered{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entered_text{
+    text-align: center;
+    font-size: 2.5rem;
+}
+.wrapp__form{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 2px 2px 6px 2px #abc3c4,
+                -2px -2px 6px 2px #abc3c4;
+    border-radius: 20px;
+    position: relative;
+}
+.wrapp__form > *{
+    margin: 10px 0;
+}
+.input_form{
+    width: 90%;
+    height: 35px;
+    padding: 5px;
+    border: 2px solid #8fc3c7;
+    border-radius: 10px;
+    font-size: 25px;
+    background: none;
+    margin: 15px 0px;
+}
+.wrapp__input{  
+    width: 100%;
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.lbl_form{
+    padding: 0 5px;
+    font-size: 1.2rem;
+    position: absolute;
+    background-color: #E3F0EC;
+}
+#lbl_user{
+    top: 10px;
+    left: 25px;
+}
+#lbl_pass{
+    top: 78px;
+    left: 25px;
+}
+.submit_form{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 3px solid #A0BA66;
+    position: relative;
+    cursor: pointer;
+}
+.sub_text{
+    z-index: 2;
+    font-size: 1.5rem;
+    transition: 0.3s linear;
+}   
+.submit_form::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #A0BA66;
+    /* #5aa65f */
+    clip-path: circle(var(--size) at center bottom);
+    transition: 0.6s ease-out;
+  }
+.submit_form:hover .sub_text{
+    color: red;
+}
+.submit_form:hover::after{
+    --size:150px;
+}

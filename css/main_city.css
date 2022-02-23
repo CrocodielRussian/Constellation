@@ -9,7 +9,8 @@ header{
 }
 header > *{
     font-size: 2em;
-}.header__panel{
+}
+.header__panel{
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -22,6 +23,9 @@ header > *{
     flex-grow: 1;
     flex-direction: row;
     align-items: center;
+}
+.text_value{
+    font-size: 2em;
 }
 .population_icon{
     width: 50px;
@@ -74,7 +78,7 @@ header > *{
 }
 .panel__money_butt{
     border: 0;
-    font-size: 1.5em;
+    font-size: 2.5em;
     background-color: transparent;
     cursor: pointer;
 }

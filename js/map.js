@@ -29,7 +29,3 @@ let dateTimer = setInterval(() => {
         timer-=1000
 }, 1000)
 
-let draw = document.getElementById("circle_map")
-let map = document.getElementsByClassName("map_map")
-
-let ctx = draw.getContext("2d")
