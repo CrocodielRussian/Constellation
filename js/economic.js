@@ -115,13 +115,18 @@ class Building{
 		buildings.append(building__info)
 	}
 }
-	
 li_data = ["Батончики","20%","10$","2/2","1000$"]
-let a = new Building("А.П Мигунов","ap_migunov",li_data,"food")
-let b = new Building("А.П Мигунов","ap_migunov",li_data,"solders")
-let c = new Building("А.П Мигунов","ap_migunov",li_data,"solders")
+const a = new Building("А.П Мигунов","ap_migunov",li_data,"food")
+const b = new Building("А.П Мигунов","ap_migunov",li_data,"solders")
+const c = new Building("А.П Мигунов","ap_migunov",li_data,"solders")
 a.createEl()
 b.createEl()
 c.createEl()
+a.createEl()
+b.createEl()
+c.createEl()
+a.createEl()
+b.createEl()
+
 
 const building_list = []

@@ -1,31 +1,34 @@
+
 const div = document.querySelector(".time_timer")
 
-let timer =  5000
+class Timer{
+    constructor(timer,div){
+        this.timer = timer
+        this.div = div
+    }
+    addNull(t){
+        return (t<10) ? "0" + t : t 
+    }
 
-function addNull(t){
-    return (t<10) ? "0" + t : t 
+    getDate(date){
+        let h = this.addNull(Math.floor(((date/1000)/60)/60))
+        let m = this.addNull(Math.floor((((date/1000)/60)%60)))
+        let s = this.addNull(Math.floor(date/1000)%60)
+
+        return `${h}:${m}:${s}`
+    }
+    dateTimer(){
+        setInterval(()=>{
+            if(this.timer > 0){
+                this.div.textContent = this.getDate(this.timer)
+            }else{
+                this.div.textContent = "Наступление злых злодеев!"
+                this.text_time = document.querySelector(".time_text")
+                this.text_time.style.display = "none"
+            }
+            this.timer-=1000
+        }, 1000)
+    }
 }
-function atack(){
-
-}
-
-function getDate(date){
-    let h = addNull(Math.floor(((date/1000)/60)/60))
-    let m = addNull(Math.floor((((date/1000)/60)%60)))
-    let s = addNull(Math.floor(date/1000)%60)
-
-    return `${h}:${m}:${s}`
-}
-let dateTimer = setInterval(() => {
-        if(timer > 0){
-            div.textContent = getDate(timer)
-        }else{
-            div.textContent = "Наступление злых злодеев!"
-            text_time = document.querySelector(".time_text")
-            text_time.style.display = "none"
-            clearTimeout(dateTimer)
-        }
-        console.log("3")
-        timer-=1000
-}, 1000)
-
+const t = new Timer(2000,div)
+const a = t.dateTimer()
