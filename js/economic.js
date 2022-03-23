@@ -9,7 +9,7 @@ let colorPieIncome = [
 	'rgb(232, 161, 23)',
 	'rgb(22, 50, 192)',
 ]
-let colorpPieExpenses = [
+let colorpPieExpenses = [	
 	'rgb(223, 117, 20)',
 	'rgb(212, 29, 29)'
 ]
@@ -19,7 +19,7 @@ const dataPieIncome = {
   	datasets: [{
     	data: [100,94,33],
     	backgroundColor: colorPieIncome,
-		borderColor: colorPieIncome,
+		borderColor: "white",
  	 }]
 }
 
@@ -28,7 +28,7 @@ const dataPieExpenses = {
   	datasets: [{
     	data: [56,52],	
     	backgroundColor: colorpPieExpenses,
-		borderColor: colorpPieExpenses,
+		borderColor: "white",
  	 }]
 }
 function getPlugins(subText){
@@ -36,14 +36,14 @@ function getPlugins(subText){
 		legend: {
 			labels: {
 				font: {
-					size: 20,
+					size: 18,
 					family: "MoshitaMono"
 				}
 			},
 			title:{
 				display: true,
 				font: {
-					size: 40,
+					size: 30,
 					family: "MoshitaMono",
 				},
 				fullSize: true,
@@ -59,7 +59,7 @@ const configPieIncome = {
 	options: {
 		responsive: true,
 		plugins: getPlugins("Доходы")
-	  }
+	}
 }
 const configPieExpenses = {
 	type: 'doughnut',
@@ -69,11 +69,40 @@ const configPieExpenses = {
 		plugins: getPlugins("Расходы")
 	}
 }
+const configLineSoldo = {
+	type: 'line',
+	data:{
+		labels:[22.03,23.03,24.03,25.03,26.03],
+		datasets: [{
+			data:[10,20,20,30,28,30]
+		}]
+	},
+	options: {
+		responsive: true,
+		plugins: {
+			legend:{
+				title:{
+					display: true,
+					font: {
+						size: 30,
+						family: "MoshitaMono",
+					},
+					fullSize: true,
+					text: "Чистый доход"
+				}
+			}
+		}
+	}	
+}
 
 ctx2 = document.getElementById("pie_expenses").getContext('2d')
 
+// ctx3 = document.getElementById("line_soldo").getContext('2d')
+
 const pieIncome = new Chart(ctx,configPieIncome)
 const pieExpenses = new Chart(ctx2,configPieExpenses)
+
+// const lineSoldo = new Chart(ctx3,configLineSoldo)
 
 // Здания
 class Building{
@@ -127,6 +156,3 @@ b.createEl()
 c.createEl()
 a.createEl()
 b.createEl()
-
-
-const building_list = []

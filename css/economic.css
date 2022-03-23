@@ -77,20 +77,21 @@
 /* Общие сведения */
 .wrapper__canvas{
     display: inline-block;
-    min-width: 300px;
-    min-height: 300px;
-    width: 30%;
-    height: 30%;
+    min-width: 200px;
+    min-height: 200px;
+    width: 25%;
+    height: 25%;
 }
 .wrapper_canvas__content{
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+
 }
-#pie_income{
-    width: 100%;
-    height: 100%;
-}
+/* #pie_income{
+    width: 100;
+    height: 300px;
+} */
 /* Здания */
 .buildings{
     display: flex;
@@ -214,32 +215,9 @@ li{
 }
 
 
-/* .tabs__block::before{
-    content: "";
-    width: 290px;
-    height: 4px;
-    top: -13px;
-    background-color: black;
-    position: relative;
-} */
 .tabs__block:target{
     display: block;
 }
-/* .tabs__block:nth-child(1)::before{
-    display: block;
-    width: 290px;
-    left: 0;
-}
-.tabs__block:nth-child(2)::before{
-    display: block;
-    width: 110px;
-    left: 490px;
-}
-.tabs__block:nth-child(3)::before{
-    display: block;
-    width: 130px;
-    left: 880px;
-} */
 @media(max-width: 915px) {
     .tabs_item span{
         width: 120px;

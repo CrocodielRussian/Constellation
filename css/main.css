@@ -30,7 +30,7 @@ header{
     align-items: center;
     justify-content: center;
     /* background-color: #ACCFD5; */
-    padding: 1em 0;
+    padding: 0.75em 0;
 }   
 .header_title{
     font-size: 2em;

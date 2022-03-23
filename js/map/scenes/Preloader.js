@@ -11,7 +11,7 @@ export class Preloader extends Phaser.Scene{
     }
     create(){
         this.scene.start("life")
-        this.scene.start("mapWar")
+        
         // this.text.anchor.setTo(0.5, 0.5)
 
     }   

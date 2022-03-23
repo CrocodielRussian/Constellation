@@ -5,13 +5,17 @@ import { mapWar } from "./scenes/mapWar.js"
 import { mapWorld } from "./scenes/mapWorld.js"
 
 export default new Phaser.Game({
-    type: Phaser.WEBGL,
+    type: Phaser.AUTO,
     width: 1024,
-    parent: "map_map",
-    height: 600,
+    parent: "map_id",
+    dom: {
+        createContainer: true
+    },
+    height: 750,
+    backgroundColor : "#e3f0ec",
     scale: {
         zoom: 2
     },
-    useTicker: true,
+
     scene: [Preloader,Life,mapWar,mapWorld]
 })

@@ -13,16 +13,16 @@ export class mapWorld extends Phaser.Scene{
     }
 
     create (){
-        // this.update()
+        this.text = this.add.text(300, 30,'Отсупление злых злодеев', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})
     }   
     update(){
-        if(this.r>800){
+        if(this.r>630){
             this.scene.pause("mapWorld")
-            this.scene.start("Life")
+            this.scene.start("life")
         }
-        this.add.image(512, 300, 'pic').setTint(0xff3333);
-        const pic = this.add.image(512, 300, 'pic')
-        let mask = this.make.graphics({fillStyle: {color: 0xebebeb }, add: false}).fillCircleShape(new Phaser.Geom.Circle(512, 300, this.r))
+        this.add.image(0, 76, 'pic').setTint(0xff3333).setOrigin(0,0)
+            const pic = this.add.image(0, 76, 'pic').setOrigin(0,0)
+        let mask = this.make.graphics({fillStyle: {color: 0xebebeb }, add: false}).fillCircleShape(new Phaser.Geom.Circle(512, 400, this.r))
         pic.setMask(new Phaser.Display.Masks.BitmapMask(this, mask))
         this.r+=5
     }

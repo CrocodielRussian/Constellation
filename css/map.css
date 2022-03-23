@@ -15,25 +15,6 @@ body{
 .wrapper__content > *{
     margin-top: 5px;
 }
-.map__time{
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.time_text{
-    font-size: 2.5em;
-    font-weight: 900;
-    text-align: center;
-    display: block;
-}
-.time_timer{
-    font-size: 2.5em;
-    color: red;
-    font-weight: 700;
-    text-align: center;
-}
 .map_map{
     min-width: 100%;
     min-height: 34.5vw;
@@ -41,13 +22,3 @@ body{
     z-index: 0;
     position: relative; 
 }
-/* .circle{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    clip-path: circle(500px at center);
-    background: url("../img/map.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 10;
-}  */
