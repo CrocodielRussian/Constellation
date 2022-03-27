@@ -1,5 +1,5 @@
 import Phaser from "../lib/phaser.js"
-// import eventsCenter from './EventsCenter.js'
+import {game} from "../main.js"
 
 export class mapWar extends Phaser.Scene{
     constructor ()
@@ -23,7 +23,7 @@ export class mapWar extends Phaser.Scene{
             }
             this.add.image(0, 76, 'pic').setTint(0xff3333).setOrigin(0,0)
             const pic = this.add.image(0, 76, 'pic').setOrigin(0,0)
-            let mask = this.make.graphics({fillStyle: {color: 0xebebeb }, add: false}).fillCircleShape(new Phaser.Geom.Circle(512, 400, this.r))
+            let mask = this.make.graphics({fillStyle: {color: 0xebebeb }, add: false}).fillCircleShape(new Phaser.Geom.Circle(game.config.width/2, game.config.height/2, this.r))
             pic.setMask(new Phaser.Display.Masks.BitmapMask(this, mask))
             this.r-=5
         }

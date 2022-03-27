@@ -1,5 +1,5 @@
 import Phaser from "../lib/phaser.js";
-
+import {game} from "../main.js"
 
 export class Life extends Phaser.Scene{
     constructor(){
@@ -16,7 +16,8 @@ export class Life extends Phaser.Scene{
     }
     create ()
     {   
-        // this.el = this.add.dom(300,100,'div','Phaser') // Проблема!!! Отказывается видеть add.dom :( 
+        // this.el = this.add.dom(300,100,'div','Phaser') // Проблема!!! Отказывается видеть add.dom :(
+        console.log(game.config.width)
         this.bg = this.add.image(0,76,'pic')
         this.bg.setOrigin(0,0)
         this.text = this.add.text(410, 30, '0', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})

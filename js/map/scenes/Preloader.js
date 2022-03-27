@@ -1,5 +1,5 @@
 import Phaser from "../lib/phaser.js";
-
+import {game} from "../main.js"
 
 export class Preloader extends Phaser.Scene{
     constructor(){
@@ -11,9 +11,6 @@ export class Preloader extends Phaser.Scene{
     }
     create(){
         this.scene.start("life")
-        
-        // this.text.anchor.setTo(0.5, 0.5)
-
     }   
     update(){
 

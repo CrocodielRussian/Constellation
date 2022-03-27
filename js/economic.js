@@ -7,9 +7,15 @@ const labelsPieIncome = ['Здания', 'Торговля', 'Инвестици
 const dataPieIncome = [100,94,33]
 const labelsPieExpenses = ['Армия', 'Правительство']
 const dataPieExpenses = [56,52]
-const labelsLineSoldo = [22.03,23.03,24.03,25.03,26.03,27.03,28.03,29.03,30.03,31.03]
-const dataLineSoldo = [10,20,20,50,28,30,-20,102,80,-150]
+const labelsLineSoldo = ['2022-11-05','2022-11-06','2022-11-07','2022-11-08','2022-11-09','2022-11-10','2022-11-11','2022-11-12','2022-11-13','2022-11-14','2022-11-15']
 
+const durationStart = document.getElementById("startdate")
+const durationEnd = document.getElementById("enddate")
+
+durationStart.value = labelsLineSoldo[0]
+durationEnd.value = labelsLineSoldo[labelsLineSoldo.length-1]
+
+const dataLineSoldo = [30,10,20,20,50,-20,0,-10,8,10,20]
 let colorPieIncome = [
 	'rgb(102, 165, 52)',
 	'rgb(232, 161, 23)',
@@ -77,9 +83,24 @@ function getPlugins(subText){
 	}
 	return allPlugins
 }
+function durationDate(){
+	const dates = [...labelsLineSoldo]
 
+	const start = document.getElementById('startdate')
+	const end = document.getElementById('enddate')
+
+	const indexStart = dates.indexOf(start.value)
+	const indexEnd = dates.indexOf(end.value)
+
+	const durationDate = dates.slice(indexStart,indexEnd + 1)
+
+	lineSoldo.config._config.data.labels = durationDate
+
+	lineSoldo.update()
+
+}
 let maxSoldo = Math.max(dataLineSoldo)
-const totalDuration = 500;
+const totalDuration = 1000;
 const delayBetweenPoints = totalDuration / dataLineSoldo.length;
 const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(maxSoldo) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
 const animation = {
@@ -110,18 +131,6 @@ const animation = {
 		}
 	}
 }
-const drawRect = {
-	id: 'rect',
-	beforeDraw: (chart) => {
-	  const ctx = chart.canvas.getContext('2d');
-	  ctx.save();
-	  ctx.globalCompositeOperation = 'destination-over';
-	  ctx.fillStyle = 'lightGreen';
-	  ctx.fillRect(0, 0, chart.width/2, chart.height/2);
-	  ctx.restore();
-	}
-}
-
 const configLineSoldo = {
 	type: 'line',
 	data:{
@@ -131,8 +140,8 @@ const configLineSoldo = {
 			data: dataLineSoldo,
 			borderColor: "red",
 			fill: {
-				above: 'rgb(20, 205, 10)',
-                below: 'rgb(255, 0, 0)',
+				above: '#70C852',
+                below: '#FF1212',
 				value: 0	
 			},
 			backgroundColor: "transparent",
@@ -147,15 +156,14 @@ const configLineSoldo = {
 		},
 		scales: {
 			x: {
-			type: 'linear'
-			}
+                type: 'time',
+                time: {
+                    unit: 'day',
+                }
+            }
 		},
 		responsive: true,
 		plugins: {
-			quadrants: {
-				t: "green",
-				b: "red",
-			},
 			legend:{
 				labels:{
 					usePointStyle: true,
@@ -171,7 +179,6 @@ const configLineSoldo = {
 				}
 			}
 		},
-		plugins: [drawRect]
 	}	
 }
 
@@ -243,7 +250,7 @@ class Transfer{
 	}
 	createEl(){
 		this.all_transfers = document.querySelector(".trade__transfers")
-		console.log(this.all_transfers)
+
 		this.body_transfer = document.createElement("div")
 		this.body_transfer.className = "transfer"
 
