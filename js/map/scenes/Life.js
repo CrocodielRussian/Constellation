@@ -1,6 +1,5 @@
 import Phaser from "../lib/phaser.js";
 import {game} from "../main.js"
-
 export class Life extends Phaser.Scene{
     constructor(){
         super('life')
@@ -13,13 +12,19 @@ export class Life extends Phaser.Scene{
     preload(){
         this.load.image('cloud', '../assets/cloud.png')
         this.load.image('pic', '../assets/map_l.jpg')
+        this.load.image('gorod','../assets/gorod_s.png')
     }
-    create ()
-    {   
-        // this.el = this.add.dom(300,100,'div','Phaser') // Проблема!!! Отказывается видеть add.dom :(
-        console.log(game.config.width)
+    create (){   
         this.bg = this.add.image(0,76,'pic')
         this.bg.setOrigin(0,0)
+        this.imageCity = this.add.image(0, 0, 'gorod').setScale(0.4).setInteractive()
+        this.titleCity = this.add.text(-15, 25, "Город", { color: 'black', align: 'center', font:'14px MoshitaMono'})
+        this.city = this.add.container(400, 350, [this.imageCity, this.titleCity])
+        this.imageCity.on('pointerdown',(pointer) =>{
+            const href = window.location.href
+            const country = href.slice(href.indexOf("#")+1)
+            window.location.href = `${country}.html`
+        })
         this.text = this.add.text(410, 30, '0', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})
         for (let i = 0; i < this.countClouds; i++)
         {

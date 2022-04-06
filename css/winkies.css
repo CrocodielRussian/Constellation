@@ -1,10 +1,9 @@
 @import "main_city.css";
-
+body{
+    overflow-x: hidden;
+}
 header{
     background-color: #DF9D19;
-}
-.population_icon{
-    background-image: url("../img/frog.png");
 }
 footer{
     background-color: #DF9D19;

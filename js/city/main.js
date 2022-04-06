@@ -1,18 +1,23 @@
 import Phaser from "./lib/phaser.js"
-import { City } from "./scenes/City.js"
+import { Game } from "./scenes/Game.js"
+import { Preloader } from "./scenes/Preloader.js"
 
-export const game =  new Phaser.Game({
+export default new Phaser.Game({
     type: Phaser.AUTO,
-    width: 1024,
+    width: 965,
+    height: 385,
     parent: "city",
     dom: {
         createContainer: true
     },
-    height: 750,
-    backgroundColor : "#e3f0ec",
+    scene: [Preloader,Game],
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 200 }
+        }
+    },
     scale: {
         zoom: 2
     },
-
-    scene: [City]
 })

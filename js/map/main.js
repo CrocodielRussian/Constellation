@@ -4,18 +4,23 @@ import { Life } from "./scenes/Life.js"
 import { mapWar } from "./scenes/mapWar.js"
 import { mapWorld } from "./scenes/mapWorld.js"
 
-export const game =  new Phaser.Game({
+export const game = new Phaser.Game({
     type: Phaser.AUTO,
     width: 1024,
+    height: 750,
     parent: "map_id",
     dom: {
         createContainer: true
     },
-    height: 750,
+    scene: [Preloader,Life,mapWar,mapWorld],
     backgroundColor : "#e3f0ec",
-    scale: {
-        zoom: 2
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 200 }
+        }
     },
-
-    scene: [Preloader,Life,mapWar,mapWorld]
+    scale: {
+        zoom: 1
+    },
 })
