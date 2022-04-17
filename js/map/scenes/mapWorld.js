@@ -7,7 +7,7 @@ export class mapWorld extends Phaser.Scene{
         super("mapWorld")
     }
     preload (){
-        this.load.image('pic', '../assets/map_l.jpg');
+        this.load.image('pic', '../assets/map_cities.png');
         this.r = 0
         
     }

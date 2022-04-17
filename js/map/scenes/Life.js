@@ -7,11 +7,12 @@ export class Life extends Phaser.Scene{
         this.bg
         this.clouds = []
         this.countClouds = 8
-        this.timer = 300000 * 12 * 60 * 24 * 2
+        this.timer = 300000
+        // 300000 * 12 * 60 * 24 * 2
     }
     preload(){
         this.load.image('cloud', '../assets/cloud.png')
-        this.load.image('pic', '../assets/map_l.jpg')
+        this.load.image('pic', '../assets/map_cities.png')
         this.load.image('gorod','../assets/gorod_s.png')
     }
     create (){   
