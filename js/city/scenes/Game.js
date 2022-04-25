@@ -5,10 +5,10 @@ export class Game extends Phaser.Scene{
         super('game')
     }
     preload(){
-        this.load.image('tiles', '../assets/tile_pack.png');
-        this.load.tilemapTiledJSON('karta', '../assets/json/map.json');
-        this.load.image('house_s',"../assets/house.png")
-        this.load.image('house_u',"../assets/house_update.png")
+        this.load.image('tiles', '../Constellation/assets/tile_pack.png');
+        this.load.tilemapTiledJSON('karta', '../Constellation/assets/json/map.json');
+        this.load.image('house_s',"../Constellation/assets/house.png")
+        this.load.image('house_u',"../Constellation/assets/house_update.png")
     }
     create(){
         

@@ -7,7 +7,7 @@ export class Preloader extends Phaser.Scene{
         this.text
     }
     preload(){
-        this.load.image('pic', '../assets/map_l.jpg')
+        this.load.image('pic', '../Constellation/assets/map_cities.png');
     }
     create(){
         this.scene.start("life")

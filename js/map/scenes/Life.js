@@ -11,9 +11,9 @@ export class Life extends Phaser.Scene{
         // 300000 * 12 * 60 * 24 * 2
     }
     preload(){
-        this.load.image('cloud', '../assets/cloud.png')
-        this.load.image('pic', '../assets/map_cities.png')
-        this.load.image('gorod','../assets/gorod_s.png')
+        this.load.image('cloud', '../Constellation/assets/cloud.png')
+        this.load.image('pic', '../Constellation/assets/map_cities.png')
+        this.load.image('gorod','../Constellation/assets/gorod_s.png')
     }
     create (){   
         this.bg = this.add.image(0,76,'pic')

@@ -7,7 +7,7 @@ export class mapWar extends Phaser.Scene{
         super("mapWar")
     }
     preload(){
-        this.load.image('pic', '../assets/map_cities.png');
+        this.load.image('pic', '../Constellation/assets/map_cities.png');
         this.r = 600
     }
 
