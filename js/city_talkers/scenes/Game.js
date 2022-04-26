@@ -88,12 +88,18 @@ export class Game extends Phaser.Scene{
                     info_table.setVisible(true)
                 });
 
-                table.addListener('click');
+                close.addEventListener('click',(event)=>{
+                    table.setVisible(false)
+                    console.log("12")
+                    close_icon.setVisible(false)
+                    info_table.setVisible(false)
+                });
                 info.addEventListener('click',(event)=>{
                     table.setVisible(false)
                     close_icon.setVisible(false)
                     info_table.setVisible(false)
                 });
+                table.addListener('click');
                 table.on('click',(event)=>{
                     table.setVisible(false)
                     close_icon.setVisible(false)

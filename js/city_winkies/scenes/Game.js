@@ -82,7 +82,8 @@ export class Game extends Phaser.Scene{
                 }else{
                     var im = this.add.image(el.x,el.y,'house_u').setInteractive().setScale(0.6)
                 }
-                    
+
+
                 im.on('pointerdown', function (pointer) {
                     table.setVisible(true)
                     close_icon.setVisible(true)
@@ -90,7 +91,13 @@ export class Game extends Phaser.Scene{
                 });
 
                 table.addListener('click');
+
                 info.addEventListener('click',(event)=>{
+                    table.setVisible(false)
+                    close_icon.setVisible(false)
+                    info_table.setVisible(false)
+                });
+                close.addEventListener('click',(event)=>{
                     table.setVisible(false)
                     close_icon.setVisible(false)
                     info_table.setVisible(false)

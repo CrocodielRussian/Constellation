@@ -2,8 +2,10 @@
 <html lang="ru">
     <?php 
         session_start();
-        if(!isset($_SESSION['logged_user']) || $_SESSION['logged_user'] != "munchkins")){
+        if(!isset($_SESSION['logged_user'])){
             header("Location: index.php");
+        }else if($_SESSION['logged_user'] != "munchkins"){
+            header("Location: map.php");
         }
     ?>
     <head>
