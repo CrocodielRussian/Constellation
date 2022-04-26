@@ -13,7 +13,7 @@ export class mapWorld extends Phaser.Scene{
     }
 
     create (){
-        this.text = this.add.text(300, 30,'Отсупление злых злодеев', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})
+        this.text = this.add.text(300, 30,'Отсупление злых злодеев', { color: 'red', align: 'center', font:'4.5em YanoneKaffeesatz'})
     }   
     update(){
         if(this.r>630){
@@ -26,7 +26,4 @@ export class mapWorld extends Phaser.Scene{
         pic.setMask(new Phaser.Display.Masks.BitmapMask(this, mask))
         this.r+=5
     }
-
-
-    
 }

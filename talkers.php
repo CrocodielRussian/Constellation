@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <?php 
+        session_start();
+        if(!isset($_SESSION['logged_user']) || $_SESSION['logged_user'] != "talkers"){
+            header("Location: index.php");
+        }
+    ?>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/sheep_sheet_icon.png" type="image/png">
         <link rel="stylesheet" href="css/talkers.css" type="text/css">
-        <title>Болтуны</title>
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+        <title>Город | Болтуны</title>
     </head>
     <body>
-        <?php 
-            session_start();
-            if(!isset($_SESSION['logged_user'])){
-                header("Location: index.php");
-            }
-        ?>
         <div class="wrapper">
             <header>
                 <div class="header__panel">
@@ -41,7 +44,9 @@
                 </div>
             </header>
             <main class="main">
-                
+                <div class="wrraper__content">
+                    <div id="city_id" class="city"></div>
+                </div>
             </main>
             <footer>
                 <nav class = "main_menu__items">
@@ -53,5 +58,6 @@
                 </nav>
             </footer>
         </div>
+        <script src="js/city_talkers/main.js" type="module"></script>
     </body>
 </html>

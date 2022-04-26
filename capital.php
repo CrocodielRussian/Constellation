@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <?php 
+        session_start();
+        if(!isset($_SESSION['logged_user'])){
+            header("Location: index.php");
+        }
+    ?>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="css/capital.css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php
+            if($_SESSION['logged_user'] == "winkies"){
+                echo '<link rel="shortcut icon" href="img/frog_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "munchkins"){
+                echo '<link rel="shortcut icon" href="img/pig_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "talkers"){
+                echo '<link rel="shortcut icon" href="img/sheep_sheet_icon.png" type="image/png">';
+            }
+         ?>
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
         <title>Столица</title>
@@ -79,12 +94,6 @@
         </style>
     </head>
     <body>
-        <?php 
-            session_start();
-            if(!isset($_SESSION['logged_user'])){
-                header("Location: index.php");
-            }
-        ?>
         <div class="wrapper">
             <header>
                 <h1 class="header_title">Столица</h1>

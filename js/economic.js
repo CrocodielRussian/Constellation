@@ -2,7 +2,6 @@
 ctx = document.getElementById("pie_income").getContext('2d')
 ctx2 = document.getElementById("pie_expenses").getContext('2d')
 ctx3 = document.getElementById("line_soldo").getContext('2d')
-
 const labelsPieIncome = ['Здания', 'Торговля', 'Инвестиции']
 const dataPieIncome = [100,94,33]
 const labelsPieExpenses = ['Армия', 'Правительство']
@@ -13,7 +12,11 @@ const durationStart = document.getElementById("startdate")
 const durationEnd = document.getElementById("enddate")
 
 durationStart.value = labelsLineSoldo[0]
+durationStart.min = labelsLineSoldo[0]
+durationStart.max = labelsLineSoldo[labelsLineSoldo.length-1]
 durationEnd.value = labelsLineSoldo[labelsLineSoldo.length-1]
+durationEnd.min = labelsLineSoldo[0]
+durationEnd.max = labelsLineSoldo[labelsLineSoldo.length-1]
 
 const dataLineSoldo = [30,10,20,20,50,-20,0,-10,8,10,20]
 let colorPieIncome = [
@@ -67,14 +70,14 @@ function getPlugins(subText){
 			labels: {
 				font: {
 					size: 18,
-					family: "MoshitaMono"
+					family: "YanoneKaffeesatz"
 				}
 			},
 			title:{
 				display: true,
 				font: {
 					size: 30,
-					family: "MoshitaMono",
+					family: "YanoneKaffeesatz",
 				},
 				fullSize: true,
 				text: subText
@@ -172,7 +175,7 @@ const configLineSoldo = {
 					display: true,
 					font: {
 						size: 30,
-						family: "MoshitaMono",
+						family: "YanoneKaffeesatz",
 					},
 					fullSize: true,
 					text: "Чистый доход"
@@ -237,7 +240,7 @@ a.createEl()
 b.createEl()
 c.createEl()
 a.createEl()
-
+// Торговля
 class Transfer{
 	constructor(county_from,count_goods_from, goods_from,county_to,count_goods_to, goods_to){
 		this.county_from = county_from
@@ -274,7 +277,6 @@ class Transfer{
 
 		this.direction_trade = document.createElement('div')
 		this.direction_trade.className = "trade_direction"
-		this.direction_trade.innerText = ">>"
 		
 
 		this.icon_country_from.innerHTML = `<img src="img/${this.county_from}.png" alt="Изображение">`
@@ -298,7 +300,9 @@ class Transfer{
 		this.all_transfers.append(this.body_transfer)
 	} 	
 }
-const trans = new Transfer("frog_diplomacy", 12, 'airplane', "frog_diplomacy", 12, 'airplane')
+const trans = new Transfer("frog_diplomacy", 3, 'airplane', "sheep_diplomacy", 12, 'car')
+const trans2 = new Transfer("pig_diplomacy", 55, 'fish', "frog_diplomacy", 2, 'airplane')
+const trans3 = new Transfer("pig_diplomacy", 5, 'car', "sheep_diplomacy", 1, 'airplane')
 trans.createEl()
-trans.createEl()
-trans.createEl()
+trans2.createEl()
+trans3.createEl()

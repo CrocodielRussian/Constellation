@@ -2,18 +2,26 @@
     --size: 0;
 }
 @font-face {
-    font-family: MoshitaMono;
-    src: url("../img/MoshitaMono.ttf");
+    font-family: YanoneKaffeesatz;
+    src: url("../fonts/YanoneKaffeesatz.ttf");
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: MoshitaMono, sans-serif;
+    font-family: YanoneKaffeesatz, sans-serif;
 }
 
 body{
     background-color: #E3F0EC;
+}
+.header_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    padding: 0.25em 0;
+    position: relative;
 }
 .content{
     max-width: 100%;
@@ -23,28 +31,55 @@ body{
     align-items: center;
     /* flex-direction: row; */
 }
-.country_img{
-    width: 60%;
-    height: 100%;
-    background: url("../img/map.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
 .entered{
     width: 40%;
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
-.entered_text{
-    text-align: center;
-    font-size: 2.5rem;
+@media(max-width: 2000px) and (min-width: 1070px){
+    .country_img{
+        width: 60%;
+        height: 100%;
+        background: url("../img/map.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+@media(max-width: 1070px) and (min-width: 100px){
+    .country_img{
+        display: none;
+    }
+    .entered{
+        width: 100%;
+    }
+
+}
+.error_text{
+    display: none;
+    width: 85%;
+    height: 20px;
+    color: #e24e4e;
+}
+.input_form{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    background: none;
+}
+.error_input,.error_input:hover{
+    border: 2px solid #e24e4e;
+}
+.normal_input{
+    border: 2px solid #8fc3c7;
+}
+.normal_input:hover{
+    border: 2px solid #72adb1;
 }
 .wrapp__form{
-    width: 400px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,30 +89,17 @@ body{
     border-radius: 20px;
     position: relative;
 }
+
+.wrapp__w__input{
+    width: 90%;
+    position: relative;
+}
+.wrapp__form{
+    width: 400px;
+    height: 300px;
+}
 .wrapp__form > *{
     margin: 10px 0;
-}
-.input_form{
-    width: 100%;
-    height: 35px;
-    padding: 5px;
-    border: 2px solid #8fc3c7;
-    border-radius: 10px;
-    font-size: 25px;
-    background: none;
-    margin: 15px 0px;
-}
-.input_form:hover{
-    border: 2px solid #72adb1;
-}
-.wrapp__input{  
-    width: 100%;
-    height: 150px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
 }
 .lbl_form{
     padding: 0 5px;
@@ -90,31 +112,14 @@ body{
     top: 22px;
     left: 14px;
 }
-
-.wrapp__w__input{
-    width: 90%;
-    position: relative;
-}
 .input_form:focus ~ .lbl_form,.input_form:not(:placeholder-shown).input_form:not(:focus) ~ .lbl_form {
     top: 6px;
     font-size: 1rem;  
     left: 10px;
 }
-.submit_form{
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    border: 3px solid #A0BA66;
-    position: relative;
-    cursor: pointer;
-    z-index: 0;
+.submit_form:hover .sub_text{
+    color: white;
 }
-.sub_text{
-    z-index: 2;
-    position: relative;
-    font-size: 1.5rem;
-    transition: 0.3s linear;
-}   
 .submit_form::before {
     content: "";
     position: absolute;
@@ -126,10 +131,115 @@ body{
     background-color: #A0BA66;
     clip-path: circle(var(--size) at center bottom);
     transition: 0.6s ease-out;
-  }
-.submit_form:hover .sub_text{
-    color: white;
 }
-.submit_form:hover::before{
-    --size:150px;
+@media(max-height: 1920px) and (min-height: 500px){
+    .entered > *{
+        margin: 2em 1em;
+    }
+    .entered_text{
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    .input_form{
+        height: 35px;
+        padding: 5px;
+        font-size: 25px;
+        margin: 15px 0px;
+    }
+    .lbl_form{
+        padding: 0 5px;
+        font-size: 1.2rem;
+        position: absolute;
+        z-index: 1;
+        background-color: #E3F0EC;
+        cursor: text;
+        transition: 0.2s;
+        top: 22px;
+        left: 14px;
+    }
+    .wrapp__input{  
+        width: 100%;
+        height: 150px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .sub_text{
+        z-index: 2;
+        position: relative;
+        font-size: 1.5rem;
+        transition: 0.3s linear;
+    } 
+    .submit_form{
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        border: 3px solid #A0BA66;
+        position: relative;
+        cursor: pointer;
+        z-index: 0;
+    }
+    .submit_form:hover::before{
+        --size:150px;
+    }
+    
+}
+@media(max-height: 500px) and (min-height: 200px){
+    .entered > *{
+        margin: 1em;
+    }
+    .entered_text{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .wrapp__form{
+        width: 300px;
+        height: 220px;
+    }
+    .lbl_form{
+        padding: 0 5px;
+        font-size: 18px;
+        position: absolute;
+        z-index: 1;
+        background-color: #E3F0EC;
+        cursor: text;
+        transition: 0.2s;
+        top: 18px;
+        left: 14px;
+    }
+    .wrapp__input{  
+        width: 100%;
+        height: 100px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .input_form{
+        height: 25px;
+        padding: 5px;
+        font-size: 18px;
+        margin: 15px 0px;
+    }
+    .sub_text{
+        z-index: 2;
+        position: relative;
+        font-size: 1.2rem;
+        transition: 0.3s linear;
+    }
+    .submit_form{
+        width: 150px;
+        height: 40px;
+        border-radius: 8px;
+        border: 3px solid #A0BA66;
+        position: relative;
+        cursor: pointer;
+        z-index: 0;
+    }
+    .submit_form:hover::before{
+        --size:150px;
+    } 
 }

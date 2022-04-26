@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <?php 
+        session_start();
+        if(!isset($_SESSION['logged_user'])){
+            header("Location: index.php");
+        }
+    ?>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php
+            if($_SESSION['logged_user'] == "winkies"){
+                echo '<title>Экономика | Мигуны</title>';
+                echo '<link rel="shortcut icon" href="img/frog_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "munchkins"){
+                echo '<title>Экономика | Жевуны</title>';
+                echo '<link rel="shortcut icon" href="img/pig_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "talkers"){
+                echo '<title>Экономика | Болтуны</title>';
+                echo '<link rel="shortcut icon" href="img/sheep_sheet_icon.png" type="image/png">';
+            }
+         ?>
         <link rel="stylesheet" href="css/economic.css" type ="text/css">
-        <title>Экономика</title>
     </head>
     <body>
-        <?php 
-            session_start();
-            if(!isset($_SESSION['logged_user'])){
-                header("Location: index.php");
-            }
-        ?>
         <div class="wrapper">
             <header>
-                <h1 class="header_title">Экономика</h1>
+                <h2 class="header_title">Экономика</h2>
             </header>
             <main class="main">
                 <div class="tabs">
@@ -31,15 +42,17 @@
                         <div id="all_info" class="tabs__block">
                             <div class="wrapper__canvas">
                                 <div class="wrapper_canvas__content">
-                                    <canvas class="canvas" id="pie_income" width="400" height="400"></canvas>
+                                    <canvas class="canvas_size" id="pie_income" width="400" height="400"></canvas>
                                 </div>
                                 <div class="wrapper_canvas__content">
-                                    <canvas class="canvas" id="pie_expenses" width="400" height="400"></canvas>
+                                    <canvas class="canvas_size" id="pie_expenses" width="400" height="400"></canvas>
                                 </div>
                                 <div id="line_sold_w" class="wrapper_canvas__content">
                                     <canvas class="canvas" id="line_soldo" width="600" height="400"></canvas>
-                                    <input onchange="durationDate()" type="date" value="2022-11-06" id="startdate">
-                                    <input onchange="durationDate()" type="date" value="2022-11-12" id="enddate">
+                                    <div class="wrapper_date">
+                                        <input onchange="durationDate()" type="date" id="startdate">
+                                        <input onchange="durationDate()" type="date" id="enddate">
+                                    </div>
                                 </div>
                             </div>
                         </div>

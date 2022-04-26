@@ -7,28 +7,39 @@ export class Life extends Phaser.Scene{
         this.bg
         this.clouds = []
         this.countClouds = 8
-        this.timer = 300000
-        // 300000 * 12 * 60 * 24 * 2
+        this.timer = 300000 * 12 * 60 * 24 * 2
     }
     preload(){
         this.load.image('cloud', '../Constellation/assets/cloud.png')
         this.load.image('pic', '../Constellation/assets/map_cities.png')
         this.load.image('gorod','../Constellation/assets/gorod_s.png')
     }
-    create (){   
+    create (){ 
         this.bg = this.add.image(0,76,'pic')
         this.bg.setOrigin(0,0)
-        this.imageCity = this.add.image(0, 0, 'gorod').setScale(0.4).setInteractive()
-        this.titleCity = this.add.text(-15, 25, "Город", { color: 'black', align: 'center', font:'14px MoshitaMono'})
-        this.city = this.add.container(400, 350, [this.imageCity, this.titleCity])
-        this.imageCity.on('pointerdown',(pointer) =>{
-            const href = window.location.href
-            const country = href.slice(href.indexOf("#")+1)
-            window.location.href = `${country}.html`
+
+        this.image_city_talkers = this.add.image(0, 0, 'gorod').setScale(0.4).setInteractive()
+        this.title_city_talkers = this.add.text(-10, 25, "Город", { color: 'black', align: 'center', font:'11px YanoneKaffeesatz'})
+        this.city_talkers = this.add.container(400, 350, [this.image_city_talkers, this.title_city_talkers])
+        this.image_city_talkers.on('pointerdown',(pointer) =>{
+            window.location.href = "talkers.php"
         })
+
+        this.image_city_munchikens = this.add.image(0, 0, 'gorod').setScale(0.4).setInteractive()
+        this.title_city_munchikens = this.add.text(-10, 25, "Город", { color: 'black', align: 'center', font:'11px YanoneKaffeesatz'})
+        this.city_munchikens = this.add.container(670, 390, [this.image_city_munchikens, this.title_city_munchikens])
+        this.image_city_munchikens.on('pointerdown',(pointer) =>{
+            window.location.href = "munchkins.php"
+        })
+        this.image_city_winkies = this.add.image(0, 0, 'gorod').setScale(0.4).setInteractive()
+        this.title_city_winkies = this.add.text(-14, 25, "Розовый", { color: 'black', align: 'center', font:'11px YanoneKaffeesatz'})
+        this.city_winkies = this.add.container(205, 510, [this.image_city_winkies, this.title_city_winkies])
+        this.image_city_winkies.on('pointerdown',(pointer) =>{
+            window.location.href = "winkies.php"
+        })
+
         this.text = this.add.text(410, 30, '0', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})
-        for (let i = 0; i < this.countClouds; i++)
-        {
+        for (let i = 0; i < this.countClouds; i++){
             this.x = Phaser.Math.Between(1200, 1800)
             this.y = Phaser.Math.Between(250, 500)
             this.clouds.push(this.add.image(this.x,this.y,"cloud"))

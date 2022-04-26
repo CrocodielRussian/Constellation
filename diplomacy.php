@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/diplomacy.css" type="text/css">
-        <title>Дипломатия</title>
-    </head>
     <?php 
         session_start();
         if(!isset($_SESSION['logged_user'])){
             header("Location: index.php");
         }
     ?>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php
+            if($_SESSION['logged_user'] == "winkies"){
+                echo '<title>Дипломатия | Мигуны</title>';
+                echo '<link rel="shortcut icon" href="img/frog_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "munchkins"){
+                echo '<title>Дипломатия | Жевуны</title>';
+                echo '<link rel="shortcut icon" href="img/pig_sheet_icon.png" type="image/png">';
+            }else if($_SESSION['logged_user'] == "talkers"){
+                echo '<title>Дипломатия | Болтуны</title>';
+                echo '<link rel="shortcut icon" href="img/sheep_sheet_icon.png" type="image/png">';
+            }
+         ?>
+        <link rel="stylesheet" href="css/diplomacy.css" type="text/css">
+    </head>
     <body> 
         <div class="wrapper">
             <header>
-                <h1 class="header_title">Дипломатия</h1>
+                <h2 class="header_title">Дипломатия</h2>
             </header>
             <main class="main">
                 <li class="attitude__items">
@@ -25,7 +36,7 @@
                     <ul id="war_attitude"class="attitude_item">Война</ul>
                 </li>
                 <div class="content">
-                    <canvas id="content_canv" width="705" height="505">
+                    <canvas id="content_canv" width="805" height="605">
                     </canvas>
                 </div>
             </main>

@@ -2,7 +2,6 @@
 
 /* #FFF9E1 */
 /* #A3D5D0 */
-
 .main{
     display: flex;
     justify-content: center;
@@ -40,7 +39,30 @@
     justify-content:center;
     align-items: center;
 }
-canvas{
-    width: 705px;
-    height: 505px;
+@media(max-height: 1920px) and (min-height: 670px){
+    canvas{
+        width: 705px;
+        height: 505px;
+    }
 }
+@media(max-height: 670px) and (min-height: 525px){
+    canvas{
+        width: 530px;
+        height: 379px;
+    }
+}
+@media(max-height: 525px) and (min-height: 300px){
+    *{
+        font-size: 15px;
+    }
+    canvas{
+        width: 353px;
+        height: 253px;
+    }
+    .attitude_item::before{
+        top: 8px;
+        left: -40px;
+    }
+}
+
+

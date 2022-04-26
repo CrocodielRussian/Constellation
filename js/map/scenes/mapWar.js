@@ -12,7 +12,7 @@ export class mapWar extends Phaser.Scene{
     }
 
     create (){ 
-        this.text = this.add.text(300, 30,'Наступление злых злодеев', { color: 'red', align: 'center', font:'4.5em MoshitaMono'})
+        this.text = this.add.text(300, 30,'Наступление злых злодеев', { color: 'red', align: 'center', font:'4.5em YanoneKaffeesatz'})
     }   
     update(){ 
         this.bg = this.add.image(0,76,'pic')

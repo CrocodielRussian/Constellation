@@ -1,28 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Work+Sans:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
 @font-face {
-    font-family: MoshitaMono;
-    src: url("../img/MoshitaMono.ttf");
+    font-family: YanoneKaffeesatz;
+    src: url("../fonts/YanoneKaffeesatz.ttf");
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    font-family: MoshitaMono, sans-serif;
+    font-family: YanoneKaffeesatz, sans-serif;
     word-spacing: 2px;
     font-size: 20px;
 }
 
 html,body{
+    min-width: 100vw;
     height: 100%;
     background-color:#E3F0EC;
 }
 
 .wrapper{
+    min-width: 100vw;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 header{
     min-width: 100%;
@@ -38,7 +42,8 @@ header{
 .main{
     /* padding: 20px; */
     width: 75%;
-    flex: 1 1 auto;
+    min-height: 250px;
+    flex: 1 2 auto;
 }
 
 a{
@@ -48,16 +53,6 @@ a{
 
 }   
 /* Нижнее меню */
-footer{
-    width: 100%;
-    min-height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #C8899C;
-    bottom: 0;
-    left: 0;
-}
 nav{
     display: flex;
     flex-direction: row;
@@ -68,34 +63,89 @@ nav{
     align-items: center;
     flex-direction: column;
     margin: 0 20px;
-    /* width: 100px; */
     min-width: 50px;
 }
+footer{
+    min-width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8899C;
+    bottom: 0;
+    left: 0;
+}
+@media (max-height: 1920px) and (min-height: 530px){
+    .main_menu__icon{
+        width: 58px;
+        height: 58px;
+        min-width: 40px;
+        min-height: 40px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}@media (max-height: 530px) and (min-height: 100px){
+    footer{
+        min-width: 100%;
+        min-height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #C8899C;
+        bottom: 0;
+        left: 0;
+    }
+    .main_menu__item{
+        margin: 0 10px;
+        min-height: 25px;
+    }
+    .main_menu__icon{
+        width: 40px;
+        height: 40px;
+        min-width: 25px;
+        min-height: 25px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-height: 448px) and (min-height: 100px){
+    .main_menu__item{
+        margin: 0 10px;
+        min-height: 25px;
+    }
+    footer{
+        min-height: 50px;
+    }
+    .main_menu__icon{
+        width: 25px;
+        height: 25px;
+        min-width: 20px;
+        min-height: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .main_menu__item > span{
+        font-size: 16px;
+    }
+}
+
 .main_menu__item > span{
     text-align: center;
 }
-.main_menu__icon{
-    width: 58px;
-    height: 58px;
-    min-width: 40px;
-    min-height: 40px;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 #world{
-    background-image: url("../img/world.png");
+    background-image: url("../img/icon/world.png");
 }
 #capital{
-    background-image: url("../img/castle.PNG");
+    background-image: url("../img/icon/castle.png");
 }
 #money{
-    background-image: url("../img/economic.png");
-    width: 70px;
-    height: 58px;
+    background-image: url("../img/icon/economic.png");
 }
 #dip{
-    background-image: url("../img/dip.PNG");
+    background-image: url("../img/icon/dip.png");
 }
 #picture{
-    background-image: url("../img/picture.PNG");
+    background-image: url("../img/icon/picture.png");
 }

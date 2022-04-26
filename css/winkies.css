@@ -5,6 +5,51 @@ body{
 header{
     background-color: #DF9D19;
 }
+.population_icon{
+    background-image: url("../img/frog.png");
+}
+.title_building{
+    color: #D4A11D;
+}
+.info{
+    background: #F1DEBA;
+}
+.wrrap_info{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+ul{
+    width: 80%;
+    padding: 1px;
+    margin:0;
+}
+.info_li{
+    display: flex;
+    align-items: center;
+}
+.table_info{
+    background-color: #519723;  
+}
+.title{
+    color: #7C6963;
+}
+.value{
+    color: #376B0D;
+}
+.close{
+    background-image: url("../assets/close.png");
+}
+.hp{
+    background-color: #FFD07A;
+}
+.level{
+    color: #D4A11D;
+}
 footer{
     background-color: #DF9D19;
 }
